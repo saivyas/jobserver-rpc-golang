@@ -1,0 +1,20 @@
+syntax = "proto3";
+package jobslist;
+option go_package = "../protos/gen/jobslist";
+service JobsService {
+	rpc JobsList (EmptyRequest) returns (JobResponse) {}
+
+}
+message EmptyRequest {}
+message EmptyResponse{}
+message JobResponse {
+	repeated Job jobs = 1;
+}
+message Job {
+	string title = 1;
+	string email = 2;
+	string description = 3;
+	int64  createdAt=4;
+	string company = 5;
+	string applylink = 6;
+}
