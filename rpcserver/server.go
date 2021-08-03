@@ -1,4 +1,4 @@
-package main
+package rpcserver
 
 import (
 	"context"
@@ -25,7 +25,7 @@ func (s *server) JobsList(ctx context.Context, request *pb.EmptyRequest) (*pb.Jo
 	return &pb.JobResponse{Jobs: resp}, nil
 }
 
-func main() {
+func Run() {
 	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)

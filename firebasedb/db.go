@@ -30,7 +30,7 @@ func GetJobs() []*pb.Job {
 		log.Fatalln(err)
 	}
 
-	ref := client.NewRef("/jobs").OrderByKey().LimitToLast(100)
+	ref := client.NewRef("/jobs").OrderByKey().LimitToLast(1)
 	var data map[string]map[string]pb.Job
 
 	if err := ref.Get(ctx, &data); err != nil {

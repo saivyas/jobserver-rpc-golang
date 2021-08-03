@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	dB "mobileapps/jobsserver/firebasedb"
+	rpcserver "mobileapps/jobsserver/rpcserver"
 	"os"
 	"time"
 )
 
 func main() {
-	dB.GetJobs()
+	rpcserver.Run()
 }
 func writeLogFile(str string) (err error) {
 	os.Remove("log.txt")
